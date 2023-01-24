@@ -1,0 +1,26 @@
+import React from 'react'
+import "../styles/Videos.css"
+
+const playButton = <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"><path d="M0 0h24v24H0z" fill="none"/><path d="M8 5v14l11-7z"/></svg>
+
+const VideoCard = ({index,image,name,})=>{
+        return (
+            <div className="videoCard" style={{backgroundImage:`url(${image})`}}>
+                <a href="">{playButton}</a>
+                <p>{name}</p>
+            </div>
+        )
+}
+
+const Video = ({videos}) => {
+  return (
+    <div className='videos'>
+
+        {videos.map((item,index)=>(
+            <VideoCard index = {index} key ={item.image} image = {item.image} name = {item.name}/>
+        ))}
+    </div>
+  )
+}
+
+export default Video
